@@ -30,7 +30,7 @@ It's a web application that lets users add, modify, delete and mark tasks as com
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'database';//change database name as yours
+$database = 'dm';//change database name as yours
 Global $dbconfig;
 $dbconfig = mysqli_connect($host,$username,$password,$database) or die("An Error occured while connecting to the database");
 ```
