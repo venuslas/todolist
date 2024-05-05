@@ -28,7 +28,7 @@ $result=mysqli_query($dbconfig,"SELECT * FROM todo");
 			<td class="col-md-2">
 				<div class="btn-group pull-right">
 
-				<a style="margin-left: 2px" title="Modifier" class="btn btn-info btn-xs edit-button" id="edit_<?=$res['id']?>" onclick="checks(<?=$res['id']?>,'<?=$res['description']?>');"><span class='glyphicon glyphicon-edit'></span></a>
+				<a style="margin-left: 2px" title="Modifier" class="btn btn-info btn-xs edit-button" id="edit_<?=$res['id']?>" onclick="checks(<?=$res['id']?>,'<?=addslashes($res['description'])?>');"><span class='glyphicon glyphicon-edit'></span></a>
 
 				<?php if ($res['status'] < 1): ?>
 					<a style="margin-left: 2px" title="Achever" class="btn btn-success btn-xs edit-button" id="checked_<?=$res['id']?>" onclick="completeItem(<?=$res['id']?>);"><span class='glyphicon glyphicon-check'></span></a>
