@@ -10,7 +10,7 @@
 ?>
 <?php 
 	if (isset($_GET['insert_description'])) {
-		$desc=$_GET['insert_description'];
+		$desc=addslashes($_GET['insert_description']);
 
 
   		if(mysqli_query($dbconfig,"INSERT INTO todo(description) values('$desc')")){
@@ -39,7 +39,7 @@
  <?php 
     if (isset($_GET['edit_id'])){
     $edit_id= $_GET['edit_id']; 
-    $new_desc= $_GET['new_desc'];
+    $new_desc=addslashes($_GET['new_desc']);
       if(mysqli_query($dbconfig,"UPDATE todo SET description='$new_desc' WHERE id=$edit_id")){
         $response_array['edit_status']="success";
       }else {
